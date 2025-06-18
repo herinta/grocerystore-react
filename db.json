@@ -1,0 +1,61 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "Vegetables",
+      "name": "Redish 500g",
+      "brand": "Mr.food",
+      "price": 2,
+      "stock": 10,
+      "description": "Fresh Redish 500g"
+    },
+    {
+      "id": "e034",
+      "name": "Apple",
+      "category": "Fruits",
+      "stock": 18,
+      "price": 19,
+      "description": "Fresh"
+    },
+    {
+      "id": "7539",
+      "name": "Orange",
+      "category": "Fruits",
+      "stock": 20,
+      "price": 20,
+      "description": "Fresh"
+    },
+    {
+      "id": "9565",
+      "name": "",
+      "category": "",
+      "stock": 0,
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": "30c7",
+      "name": "Orange",
+      "category": "c",
+      "stock": 1,
+      "price": 1,
+      "description": "res"
+    },
+    {
+      "id": "1562",
+      "name": "",
+      "category": "",
+      "stock": 0,
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": "3721",
+      "name": "",
+      "category": "",
+      "stock": 0,
+      "price": 0,
+      "description": ""
+    }
+  ]
+}
