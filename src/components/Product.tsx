@@ -1,128 +1,39 @@
-import ProductCard from "./ProductCard";
+import { Link } from "react-router-dom";
 
-type Product = {
-  id: number;
+type ProductProps = {
+  id?: number | string;
+  brand: string;
   image: string;
   category: string;
   title: string;
-  brand: string;
   price: number;
-  originalPrice: number;
-};
-
-const productData: Product[] = [
-  {
-    id: 1,
-    image: "/images/img-11.png", // Gambar Redish
-    category: "Vegetables",
-    title: "Redish 500g",
-    brand: "Mr.food",
-    price: 2,
-    originalPrice: 3.99,
-  },
-  {
-    id: 2,
-    image: "/images/img-12.png", // Gambar Potatoes
-    category: "Vegetables",
-    title: "Potatos 1kg",
-    brand: "Mr.food",
-    price: 1,
-    originalPrice: 1.99,
-  },
-  {
-    id: 3,
-    image: "/images/img-13.png", // Gambar Tomatos
-    category: "Fruits",
-    title: "Tomatos 200g",
-    brand: "Mr.food",
-    price: 0.30,
-    originalPrice: 0.99,
-  },
-  {
-    id: 4,
-    image: "/images/img-14.png", // Gambar Broccoli
-    category: "Vegetables",
-    title: "Broccoli 1kg",
-    brand: "Mr.food",
-    price: 1.50,
-    originalPrice: 2.99,
-  },
-  {
-    id: 5,
-    image: "/images/img-15.png", // Gambar Green Beans
-    category: "Vegetables",
-    title: "Green Beans 250g",
-    brand: "Mr.food",
-    price: 1,
-    originalPrice: 1.99,
-  },
-  {
-    id: 6,
-    image: "/images/img-11.png", // Gambar Redish
-    category: "Vegetables",
-    title: "Redish 500g",
-    brand: "Mr.food",
-    price: 2,
-    originalPrice: 3.99,
-  },
-  {
-    id: 7,
-    image: "/images/img-12.png", // Gambar Potatoes
-    category: "Vegetables",
-    title: "Potatos 1kg",
-    brand: "Mr.food",
-    price: 1,
-    originalPrice: 1.99,
-  },
-  {
-    id: 8,
-    image: "/images/img-13.png", // Gambar Tomatos
-    category: "Fruits",
-    title: "Tomatos 200g",
-    brand: "Mr.food",
-    price: 0.30,
-    originalPrice: 0.99,
-  },
-  {
-    id: 9,
-    image: "/images/img-14.png", // Gambar Broccoli
-    category: "Vegetables",
-    title: "Broccoli 1kg",
-    brand: "Mr.food",
-    price: 1.50,
-    originalPrice: 2.99,
-  },
-  {
-    id: 10,
-    image: "/images/img-15.png", 
-    category: "Vegetables",
-    title: "Green Beans 250g",
-    brand: "Mr.food",
-    price: 1,
-    originalPrice: 1.99,
-  },
-];
+}
 
 
-const Product = () => {
+const Product = ({id, brand, image, category, title, price}: ProductProps) => {
   return (
-    <div className="mt-10 px-24">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-10 mx-auto">New Product</h2>
-        <div className="flex flex-wrap gap-10 items-center">
-        {productData.map((product) => (
-            <ProductCard
-              key={product.id}
-              image={product.image}
-              category={product.category}
-              title={product.title}
-              brand={product.brand}
-              price={product.price}
-              originalPrice={product.originalPrice}
-              id={product.id}
-            />
-        ))}
+    <Link to={`/detail-product/${id}`}>
+        <div className="w-[228px] h-[302px] shadow-md rounded-lg">
+        <img className="w-full object-cover max-h-1/2" src={image} alt="" />
+        <div className="p-4">
+            <p className="text-sm font-light text-gray-300">{category}</p>
+            <h2 className="text-sm font-semibold text-gray-700">{title}</h2>
+            <p className="text-xs text-green-500">
+                <span className="text-gray-500">By</span> {brand}
+            </p>
+            <div className="flex justify-between items-center mt-2">
+                <span className="text-xl font-semibold text-green-500">
+                    $ {price}
+                    <span className="text-gray-500 line-through text-sm py-2 font-normal ml-2 ">$15.99</span>
+                </span>
+                 <button className="bg-green-100 text-sm text-green-500 px-6 py-2 rounded-md cursor-pointer">
+                    Add
+                </button>
+            </div>
+
         </div>
     </div>
+    </Link>
   )
 }
 

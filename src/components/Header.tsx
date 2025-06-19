@@ -1,6 +1,5 @@
 import { Search, Heart, ShoppingCart } from 'lucide-react';
 import { useState } from 'react';
-import Cart from './Cart';
 
 
 const Header = () => {
@@ -65,10 +64,6 @@ const Header = () => {
       </div>
       </div>
     </nav>
-
-    {isCartOpen && (
-      <Cart/>
-    )}
 
 
     </div>

@@ -1,47 +1,93 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import CategoriesCard from "./CategoriesCard";
+import ProductCard from "./ProductCard";
+
+
+type CategoriesCard = {
+    id: number;
+    image: string;
+    name: string;
+    stock: number;
+    bgColor: string
+}
+
+const categoriesCard: CategoriesCard[] = [
+    {
+        id: 1,
+        image: 'images/img-1.png',
+        name: 'Peach',
+        stock: 20,
+        bgColor: 'bg-red-100'
+    },
+    {
+        id: 2,
+        image: 'images/img-2.png',
+        name: 'Vegetables',
+        stock: 15,
+        bgColor: 'bg-green-100'
+    },
+    {
+        id: 3,
+        image: 'images/img-3.png',
+        name: 'Strawberry',
+        stock: 10,
+        bgColor: 'bg-blue-100'
+    },
+    {
+        id: 4,
+        image: 'images/img-4.png',
+        name: 'Apple',
+        stock: 5,
+        bgColor: 'bg-yellow-100'
+    },
+    {
+        id: 5,
+        image: 'images/img-5.png',
+        name: 'Orange',
+        stock: 8,
+        bgColor: 'bg-orange-100'
+    },
+    {
+        id: 6,
+        image: 'images/img-6.png',
+        name: 'Potato',
+        stock: 12,
+        bgColor: 'bg-purple-100'
+    },
+    {
+        id: 7,
+        image: 'images/img-7.png',
+        name: 'Carot',
+        stock: 18,
+        bgColor: 'bg-pink-100'
+    },
+]
+
 
 const ExploreCategories = () => {
-  const tabs: string[] = [
-    "All",
-    "Vegetables",
-    "Fruits",
-    "Coffee & teas",
-    "Meat",
-  ];
 
-  return (
-    <div>
-      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 px-24 mt-20">
-        <h2 className="text-2xl  text-gray-800">Explore Categories</h2>
-        <div className="flex flex-wrap justify-center space-x-2 md:space-x-3 text-sm md:text-base">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              className="py-1 px-2 rounded-md  text-gray-500 hover:text-green-600 hover:bg-green-50"
-            >
-              {tab}
-            </button>
-          ))}
+    const categories: string[] = ['All', 'Vegetables', 'Fruits', 'Coffee', 'Meat'];
+ 
+    return (
+    <div className="">
+        <div className="flex justify-between py-20 px-18">
+            <h1 className="text-3xl">Explore Categories</h1>
+            <div className="flex space-x-6">
+                {categories.map((category) => (
+                    <button>{category}</button>
+                ))}
+            </div>
         </div>
-      </div>
-      <div className="flex space-x-8 justify-between items-center px-6">
-        <button className="prev-categories w-10 h-10 bg-white rounded-full shadow-lg hover:bg-gray-100  text-gray-600 ">
-          <ChevronLeft />
-        </button>
-           <CategoriesCard name="Peach" items="20" image={"images/img-1.png"} bg="bg-red-50"/>
-            <CategoriesCard name="Peach" items="20" image={"images/img-2.png"} bg="bg-red-50"/>
-            <CategoriesCard name="Peach" items="20" image={"images/img-3.png"} bg="bg-red-50"/>
-            <CategoriesCard name="Peach" items="20" image={"images/img-4.png"} bg="bg-red-50"/>
-            <CategoriesCard name="Peach" items="20" image={"images/img-5.png"} bg="bg-red-50"/>
-            <CategoriesCard name="Peach" items="20" image={"images/img-6.png"} bg="bg-red-50"/>
-            <CategoriesCard name="Peach" items="20" image={"images/img-7.png"} bg="bg-red-50"/>
-        <button className="prev-categories z-10  w-10 h-10 bg-white rounded-full shadow-lg hover:bg-gray-100  text-gray-600 ">
-          <ChevronRight />
-        </button>
-      </div>
-    </div>
-  );
-};
 
-export default ExploreCategories;
+        <div className="flex space-x-8 px-20 justify-between">
+            {categoriesCard.map((card) => (
+                <ProductCard key={card.id} 
+                     name={card.name} image={card.image} 
+                     stock={card.stock} bgColor={card.bgColor}
+                />
+            ))}
+        </div>
+
+    </div>
+  )
+}
+
+export default ExploreCategories

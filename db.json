@@ -1,61 +1,61 @@
 {
   "products": [
     {
-      "id": 1,
+      "name": "Redish 5000gram",
       "category": "Vegetables",
-      "name": "Redish 500g",
-      "brand": "Mr.food",
+      "stock": 100,
       "price": 2,
-      "stock": 10,
-      "description": "Fresh Redish 500g"
+      "description": "Fresh Redish 500g",
+      "id": "1"
     },
     {
-      "id": "e034",
-      "name": "Apple",
+      "name": "Apples",
       "category": "Fruits",
       "stock": 18,
       "price": 19,
-      "description": "Fresh"
+      "description": "Fresh",
+      "id": "e034"
     },
     {
-      "id": "7539",
-      "name": "Orange",
+      "name": "Oranges",
       "category": "Fruits",
       "stock": 20,
-      "price": 20,
-      "description": "Fresh"
+      "price": 200,
+      "description": "Fresh",
+      "id": "7539"
     },
     {
-      "id": "9565",
-      "name": "",
-      "category": "",
-      "stock": 0,
-      "price": 0,
-      "description": ""
+      "id": "61fa",
+      "name": "name",
+      "category": "je ",
+      "stock": 989,
+      "price": 98,
+      "description": "jk",
+      "image": "images/img-14.png"
     },
     {
-      "id": "30c7",
-      "name": "Orange",
-      "category": "c",
-      "stock": 1,
-      "price": 1,
-      "description": "res"
+      "id": "7da0",
+      "name": "kjsdkjs",
+      "category": "jkjk",
+      "stock": 12,
+      "price": 121,
+      "description": "jkjk"
     },
     {
-      "id": "1562",
-      "name": "",
-      "category": "",
-      "stock": 0,
-      "price": 0,
-      "description": ""
+      "id": "e8a7",
+      "name": "tesssss",
+      "category": "jkjk",
+      "stock": 989,
+      "price": 898,
+      "description": "jhkhk"
     },
     {
-      "id": "3721",
-      "name": "",
-      "category": "",
-      "stock": 0,
-      "price": 0,
-      "description": ""
+      "id": "b5fe",
+      "name": "ds,dms,md",
+      "category": "jkjk",
+      "stock": 898,
+      "price": 8989,
+      "description": "jkjjljlj"
     }
   ]
 }

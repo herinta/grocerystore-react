@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -12,6 +12,18 @@ const AddProduct = () => {
     const [stock, setStock] = useState(0);
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
+      const [image, setImage] = useState(null);
+
+
+    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]; 
+    if (file) {
+      const imageName = `images/${file.name}`;
+      setImage(imageName);
+    } else {
+      setImage(null);
+    }
+  };
 
 
    
@@ -23,14 +35,14 @@ const AddProduct = () => {
             category: category,
             stock: stock,
             price: price,
-            description: description
+            description: description,
+            image: image
         } 
 
         axios.post('http://localhost:8000/products', newProduct)
         .then((response) => {
             console.log(response.data);
-            navigate('/admin/dashboard');
-            
+            navigate('/admin/dashboard');    
 
         })
         .catch((error) => {
@@ -97,7 +109,14 @@ const AddProduct = () => {
                     rows={3}
                 />
             </div>
-
+             <div className="mb-4">
+                <label className="block text-sm font-medium">Image</label>
+               <input
+                type="file"
+                onChange={handleFileChange}
+                className=" file:border-1  file:px-3 file:py-1 file:text-sm  hover:file:bg-gray-100 file:cursor-pointer"
+                />
+            </div>
             <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-md">Add Product</button>
 
         </form>
